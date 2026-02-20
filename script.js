@@ -19,6 +19,8 @@ const facts = [
     "Chimpanzees use tools like experts - Chimpanzees do not just use sticks to poke at termites; they use rocks to crack open nuts. Basically, they are the cavemen of the primate world, but with more style."
 ];
 
+let lastIndex = -1;
+
 const button = document.querySelector(".fun-btn");  // matches class in HTML
 const popup = document.getElementById("popup");     // popup container
 const factText = document.getElementById("factText"); 
@@ -27,13 +29,24 @@ const sound = document.getElementById("clickSound");
 
 // Show popup and play sound
 button.addEventListener("click", () => {
-    const randomIndex = Math.floor(Math.random() * facts.length);
+    let randomIndex;
+    do {
+        randomIndex = Math.floor(Math.random() * facts.length);
+    } while (randomIndex === lastIndex);
+    lastIndex = randomIndex;
+
     factText.textContent = facts[randomIndex];
+
     popup.style.display = "flex";
+    popup.classList.add("show");
+
+    sound.currentTime = 0;
     sound.play();
 });
 
-// Close popup when pressing the close button
 closeBtn.addEventListener("click", () => {
-    popup.style.display = "none";
+    popup.classList.remove("show");
+    setTimeout(() => {
+        popup.style.display = "none";
+    }, 200); // matches the css transition
 });
