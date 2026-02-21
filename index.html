@@ -8,29 +8,77 @@
 </head>
 <body>
 
-<div class="main-content">
-  <img src="images/monkey.png" alt="Cute monkey">
-  
-  <div class="text-overlay">
-    <h1>Welcome to The Primate Website! 🐵</h1>
-    <p>Welcome to the jungle, now let's do some monkey business!</p>
-    <p>Take a fun fact, or have a look at our baby monkey gallery!</p>
-  </div>
+<!-- HOME PAGE -->
+<div id="homePage">
 
-  <button class="fun-btn">Click me (fun fact!)</button>
-</div>
-
-    <!-- Popup container -->
-    <div id="popup" class="popup">
-        <div class="popup-box">
-            <p id="factText">Fun Fact Appears here!</p>
-            <button id="closeBtn">Close</button>
-        </div>
+  <div class="main-content">
+    <img src="images/monkey.png" alt="Cute monkey">
+    
+    <div class="text-overlay">
+      <h1>Welcome to The Primate Website! 🐵</h1>
+      <p>Welcome to the jungle, now let's do some monkey business!</p>
+      <p>Take a fun fact, or have a look at our baby monkey gallery!</p>
     </div>
 
-    <!-- Hidden audio for click sound -->
-    <audio id="clickSound" src="click.mp3"></audio>
+    <button class="fun-btn">Click me (fun fact!)</button>
+    <button id="goToGallery" class="fun-btn">Baby Monkey Gallery 🐒</button>
+  </div>
 
-    <script src="script.js"></script>
+</div>
+
+
+<!-- GALLERY PAGE -->
+<div id="galleryPage" style="display: none;">
+
+  <div class="main-content">
+    <h1>Primate Gallery 🐒</h1>
+
+    <div class="carousel">
+      <img id="carousel-img" src="images/monkey1.jpg" alt="Baby Monkey">
+    </div>
+
+    <button id="newMonkeyBtn" class="fun-btn">
+      Show Me a Cute Monkey!
+    </button>
+
+    <button id="backHome" class="nav-btn">
+      ⬅ Back to Home
+    </button>
+  </div>
+
+</div>
+
+
+<!-- Popup -->
+<div id="popup" class="popup">
+  <div class="popup-box">
+    <p id="factText">Fun Fact Appears here!</p>
+    <button id="closeBtn">Close</button>
+  </div>
+</div>
+
+<audio id="clickSound" src="click.mp3"></audio>
+
+<script src="script.js"></script>
+<script src="gallery.js"></script>
+
+<script>
+  const homePage = document.getElementById("homePage");
+  const galleryPage = document.getElementById("galleryPage");
+  const goToGallery = document.getElementById("goToGallery");
+  const backHome = document.getElementById("backHome");
+
+  goToGallery.addEventListener("click", () => {
+    homePage.style.display = "none";
+    galleryPage.style.display = "block";
+    window.scrollTo(0, 0);
+  });
+
+  backHome.addEventListener("click", () => {
+    galleryPage.style.display = "none";
+    homePage.style.display = "block";
+    window.scrollTo(0, 0);
+  });
+</script>
+
 </body>
-</html>
