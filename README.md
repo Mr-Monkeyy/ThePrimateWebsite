@@ -1,14 +1,14 @@
 # The Primate Website 🐵
-# A fun static website built with HTML, CSS, and JavaScript that shares interesting primate facts and cute baby monkey pictures to brighten your day.
+# A fun static website built with HTML, CSS, and JavaScript that shares interesting primate facts and cute monkey pictures to brighten your day.
 
 About the Project:
-The Primate Website is a small interactive site designed to entertain users with funny and interesting facts about primates while also showing cute baby monkey images. The project was built from scratch as a way to practice writing real HTML, CSS, and JavaScript without relying on AI-generated code.
+The Primate Website is a small interactive site designed to entertain users with funny and interesting facts about primates while also showing cute monkey images. The project was built from scratch as a way to practice writing real HTML, CSS, and JavaScript without relying on AI-generated code.
 
 Features: 
 - Random primate fun fact generator
 - Animated popup that displays a new fact each time the button is clicked
 - Button click sound for interaction feedback
-- Baby monkey gallery with a spinning image carousel effect
+- Monkey gallery with a spinning image carousel effect
 - Custom jungle-themed styling
 - Navigation between the main page and gallery page
 
