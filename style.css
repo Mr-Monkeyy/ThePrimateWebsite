@@ -64,7 +64,7 @@ img {
 
 /* Popup overlay */
 .popup {
-    display: none;  /* hidden initially */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
@@ -139,13 +139,22 @@ img {
   transition: transform 0.8s ease;
 }
 
+.spin {
+  animation: spin 0.6s ease-in-out;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .fun-btn {
   padding: 12px 25px;
   border-radius: 25px;
   border: none;
   font-size: 16px;
   cursor: pointer;
-  margin: 15px;
+  margin: 0px;
 }
 
 .nav-btn {
@@ -153,6 +162,11 @@ img {
   margin-top: 20px;
   text-decoration: none;
   font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 @keyframes popIn {

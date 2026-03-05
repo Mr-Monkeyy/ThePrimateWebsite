@@ -14,15 +14,17 @@ const newMonkeyBtn = document.getElementById("newMonkeyBtn");
 
 newMonkeyBtn.addEventListener("click", () => {
 
-  // Random image
-  const randomIndex = Math.floor(Math.random() * monkeyImages.length);
-  carouselImg.src = monkeyImages[randomIndex];
+  carouselImg.classList.remove("spin");
 
-  // Spin effect
-  carouselImg.style.transform = "rotateY(180deg)";
+  void carouselImg.offsetWidth;
 
+  // Add spin
+  carouselImg.classList.add("spin");
+
+  // Change image after animatio
   setTimeout(() => {
-    carouselImg.style.transform = "rotateY(0deg)";
-  }, 800);
+    const randomIndex = Math.floor(Math.random() * monkeyImages.length);
+    carouselImg.src = monkeyImages[randomIndex];
+  }, 200);
 
 });
